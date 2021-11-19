@@ -1,0 +1,28 @@
+.chatRoom {
+  padding: 10px;
+}
+
+.messagesSection {
+  overflow: scroll;
+  padding-bottom: 50px;
+}
+
+.myMessageSection {
+  background-color: lightgray;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.messageInput {
+  width: 85%;
+  height: 35px;
+}
+
+.sendMessageBtn {
+  margin-left: 5px;
+  width: 12%;
+}
