@@ -11,9 +11,9 @@ import org.springframework.web.socket.config.annotation.WebSocketMessageBrokerCo
 @EnableWebSocketMessageBroker
 public class WebSocketConfiguration implements WebSocketMessageBrokerConfigurer {
 
-	@Value("${cors.url}")
+	@Value("${cors.allowed.url}")
 	private String allowedURL;
-	
+
 	@Override
 	public void registerStompEndpoints(StompEndpointRegistry registry) {
 		registry.addEndpoint("/stomp-endpoint").setAllowedOrigins(allowedURL).withSockJS();
