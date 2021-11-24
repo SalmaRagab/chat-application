@@ -1,16 +1,33 @@
 import './ChatMessage.css';
 export default function ChatMessage(props) {
+    let userName = localStorage.getItem('userName')
+
     return (
-        <div className="chatMessage">
-            <div className="messageInfo">
-                {props.userName}
-            </div>
-            <div>
-                {props.message}
-            </div>
-            <div className="messageInfo">
-                {props.dateTime}
-            </div>
-        </div>
+            props.sender === userName ? (
+                <div className="myChatMessage">
+                    <div className="messageInfo">
+                        You
+                    </div>
+                    <div>
+                        {props.content}
+                    </div>
+                    <div className="messageInfo">
+                        {new Date(props.date).toLocaleString()}
+                    </div>
+                </div>
+            ):(
+                <div className="othersChatMessage">
+                    <div className="messageInfo">
+                        {props.sender}
+                    </div>
+                    <div>
+                        {props.content}
+                    </div>
+                    <div className="messageInfo">
+                        {new Date(props.date).toLocaleString()}
+                    </div>
+                </div>
+            )
+            
     );
 }
