@@ -13,6 +13,8 @@ export default function Login() {
     }
 
     function login(event) {
+        event.preventDefault();
+        localStorage.setItem('userName', userName)
         navigate('/chat-room');
     }
 
@@ -20,12 +22,12 @@ export default function Login() {
         <div className="Login">
             <Form onSubmit={login}>
                 <FormGroup size="lg" controlId="userName">
-                    <FormLabel>User name</FormLabel>
+                    <FormLabel>Display name</FormLabel>
                     <FormControl autoFocus type="text" value={userName} onChange={(e) => setUserName(e.target.value)}/>
                 </FormGroup>
-            <Button block size="lg" type="submit" disabled={!validateUserName()}>
-                Login
-            </Button>
+                <Button className="enterChatRoomButton" block size="lg" type="submit" disabled={!validateUserName()}>
+                    Enter Chat Room
+                </Button>
             </Form>
         </div>
     );
