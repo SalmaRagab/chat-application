@@ -1,0 +1,15 @@
+.myChatMessage {
+  margin-bottom: 10px;
+  border-color: lightgray;
+  border-style: solid;
+  padding: 5px;
+}
+
+.othersChatMessage {
+  margin-bottom: 10px;
+  margin-left: 5px;
+}
+
+.messageInfo {
+  color: darkgray;
+}
