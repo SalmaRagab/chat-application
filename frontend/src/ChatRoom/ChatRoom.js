@@ -4,11 +4,12 @@ import "./ChatRoom.css";
 import { useEffect, useState, useRef } from "react";
 import * as SockJS from 'sockjs-client';
 import * as Stomp from 'stompjs';
+import {API_BASE_URL} from '../Constants';
 
 export default function ChatRoom() {
 
     const userName = localStorage.getItem('userName');
-    var socket = new SockJS('http://localhost:8080/stomp-endpoint');
+    var socket = new SockJS(`${API_BASE_URL}/stomp-endpoint`);
 
     let stompClient = null;
     stompClient = Stomp.over(socket);
@@ -19,7 +20,7 @@ export default function ChatRoom() {
     const [connectedStatus, setConnectedStatus] = useState(false);
 
     useEffect(() => {
-        fetch('http://localhost:8080/messages')
+        fetch(`${API_BASE_URL}/messages`)
               .then(response => response.json())
               .then(data => setChatMessages(data));
       }, []);
