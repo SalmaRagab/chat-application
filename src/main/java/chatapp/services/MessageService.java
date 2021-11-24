@@ -12,11 +12,11 @@ import chatapp.repositories.MessageRepository;
 public class MessageService {
 	@Autowired
 	private MessageRepository repository;
-	
+
 	public List<Message> findAll() {
 		return (List<Message>) repository.findAll();
 	}
-	
+
 	public Message create(Message message) {
 		message.setDateTime(new java.sql.Timestamp(new java.util.Date().getTime()));
 		return repository.save(message);
