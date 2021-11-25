@@ -34,7 +34,7 @@ export default function ChatRoom() {
             console.log('Connected: ' + frame);
             setConnected(true);
             stompClient.subscribe('/message/chat', function (message) {
-                console.log('MESSAGEEE: ', message);
+                console.log('Message recieved: ', message);
                 onMessageReceived(message.body);
             });
         });
