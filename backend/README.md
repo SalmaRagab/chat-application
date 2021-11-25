@@ -6,5 +6,8 @@ This project runs by default on port **8080**
 
 ## To run this
 
+- navigate to the backend folder
+- add your database credentials to the [application.properties file]('backend/src/main/resources/application.properties')
 - run `mvn clean install`
 - run `java -jar target/chat-app.jar `
+  The server runs on port 8080
