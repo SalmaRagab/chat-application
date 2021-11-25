@@ -6,5 +6,5 @@ This project runs by default on port **8080**
 
 ## To run this
 
-- build the docker image using this command `mvn clean install`
+- run `mvn clean install`
 - run `java -jar target/chat-app.jar `
